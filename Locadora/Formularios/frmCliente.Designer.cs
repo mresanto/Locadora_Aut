@@ -35,6 +35,7 @@
             this.txtPesquisarNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.tabCadastro = new System.Windows.Forms.TabPage();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCnh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPesquisar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPesquisar)).BeginInit();
@@ -73,6 +73,7 @@
             this.tabPesquisar.TabIndex = 1;
             this.tabPesquisar.Text = "Pesquisar";
             this.tabPesquisar.UseVisualStyleBackColor = true;
+            this.tabPesquisar.Click += new System.EventHandler(this.tabPesquisar_Click);
             // 
             // grdPesquisar
             // 
@@ -127,6 +128,16 @@
             this.tabCadastro.TabIndex = 0;
             this.tabCadastro.Text = "Principal";
             this.tabCadastro.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(124, 106);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(109, 35);
+            this.btnNovo.TabIndex = 5;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // label3
             // 
@@ -198,16 +209,6 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(124, 106);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(109, 35);
-            this.btnNovo.TabIndex = 5;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmCliente
             // 

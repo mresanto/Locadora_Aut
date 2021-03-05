@@ -14,7 +14,7 @@ namespace Locadora.Action
     {
         private Conexao _con = new Conexao();
 
-        public Cliente Detalhe(int? idCliente)
+        public Cliente Detalhe(int idCliente)
         {
             try
             {

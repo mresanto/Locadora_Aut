@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCadVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCadCliente});
+            this.mnuCadCliente,
+            this.mnuCadVeiculo});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -58,6 +60,13 @@
             this.mnuCadCliente.Size = new System.Drawing.Size(180, 22);
             this.mnuCadCliente.Text = "Cliente";
             this.mnuCadCliente.Click += new System.EventHandler(this.mnuCadCliente_Click);
+            // 
+            // mnuCadVeiculo
+            // 
+            this.mnuCadVeiculo.Name = "mnuCadVeiculo";
+            this.mnuCadVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuCadVeiculo.Text = "Veículo";
+            this.mnuCadVeiculo.Click += new System.EventHandler(this.mnuCadVeiculo_Click);
             // 
             // frmPrincipal
             // 
@@ -81,6 +90,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCadCliente;
+        private System.Windows.Forms.ToolStripMenuItem mnuCadVeiculo;
     }
 }
 

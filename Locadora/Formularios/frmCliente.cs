@@ -185,23 +185,6 @@ namespace Locadora.Formularios
             }
         }
 
-        private bool ValidaCampos()
-        {
-            if (txtNome.Text == "")
-            {
-                MessageBox.Show("O nome do cliente precisa ser preenchido", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-
-            if (txtCPF.Text == "")
-            {
-                MessageBox.Show("O CPF do cliente precisa ser preenchido", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-
-            return true;
-        }
-
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
@@ -228,6 +211,27 @@ namespace Locadora.Formularios
                 throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
 
             }
+        }
+        private bool ValidaCampos()
+        {
+            if (txtNome.Text == "")
+            {
+                MessageBox.Show("O nome do cliente precisa ser preenchido", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            if (txtCPF.Text == "")
+            {
+                MessageBox.Show("O CPF do cliente precisa ser preenchido", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void tabPesquisar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
