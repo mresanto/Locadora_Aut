@@ -59,21 +59,21 @@
             // mnuCadCliente
             // 
             this.mnuCadCliente.Name = "mnuCadCliente";
-            this.mnuCadCliente.Size = new System.Drawing.Size(180, 22);
+            this.mnuCadCliente.Size = new System.Drawing.Size(115, 22);
             this.mnuCadCliente.Text = "Cliente";
             this.mnuCadCliente.Click += new System.EventHandler(this.mnuCadCliente_Click);
             // 
             // mnuCadVeiculo
             // 
             this.mnuCadVeiculo.Name = "mnuCadVeiculo";
-            this.mnuCadVeiculo.Size = new System.Drawing.Size(180, 22);
+            this.mnuCadVeiculo.Size = new System.Drawing.Size(115, 22);
             this.mnuCadVeiculo.Text = "Veículo";
             this.mnuCadVeiculo.Click += new System.EventHandler(this.mnuCadVeiculo_Click);
             // 
             // mnuCadAlugle
             // 
             this.mnuCadAlugle.Name = "mnuCadAlugle";
-            this.mnuCadAlugle.Size = new System.Drawing.Size(180, 22);
+            this.mnuCadAlugle.Size = new System.Drawing.Size(115, 22);
             this.mnuCadAlugle.Text = "Aluguel";
             this.mnuCadAlugle.Click += new System.EventHandler(this.mnuCadAlugle_Click);
             // 

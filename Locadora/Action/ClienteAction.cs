@@ -156,7 +156,7 @@ namespace Locadora.Action
 
                 _con.Comando.Parameters.Clear();
 
-                _con.Comando.CommandText = "DELETE FROM cliente WHERE id_cliente = @id_cliente";
+                _con.Comando.CommandText = "DELETE FROM cliente WHERE id_cliente = @id_cliente;";
 
                 _con.Comando.Parameters.Add(Funcoes.ParametrosInsercao(idCliente, "@id_cliente", DbType.Int32));
 

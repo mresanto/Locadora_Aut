@@ -164,7 +164,7 @@
             // label3Vei
             // 
             this.label3Vei.AutoSize = true;
-            this.label3Vei.Location = new System.Drawing.Point(362, 54);
+            this.label3Vei.Location = new System.Drawing.Point(6, 164);
             this.label3Vei.Name = "label3Vei";
             this.label3Vei.Size = new System.Drawing.Size(25, 13);
             this.label3Vei.TabIndex = 10;
@@ -172,11 +172,11 @@
             // 
             // txtInfoVei
             // 
-            this.txtInfoVei.Location = new System.Drawing.Point(362, 70);
+            this.txtInfoVei.Location = new System.Drawing.Point(9, 190);
             this.txtInfoVei.MaxLength = 300;
             this.txtInfoVei.Multiline = true;
             this.txtInfoVei.Name = "txtInfoVei";
-            this.txtInfoVei.Size = new System.Drawing.Size(194, 279);
+            this.txtInfoVei.Size = new System.Drawing.Size(519, 279);
             this.txtInfoVei.TabIndex = 3;
             // 
             // label2Vei
