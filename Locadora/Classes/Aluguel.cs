@@ -8,24 +8,24 @@ namespace Locadora.Classes
 {
     public class Aluguel
     {
-        public int Id { get; set; }
+        public int IdAluguel { get; set; }
         public int IdCliente { get; set; }
         public int IdVeiculo { get; set; }
         public string NomeCliente { get; set; }
         public string NomeVeiculo { get; set; }
-        public string Preco { get; set; }
+        public int Preco { get; set; }
         public string DataAluguel { get; set; }
         public string DataDevolucao { get; set; }
         public bool Estado { get; set; }
 
         public Aluguel()
         {
-            Id = 0;
+            IdAluguel = 0;
             IdCliente = 0;
             IdVeiculo = 0;
             NomeCliente = "";
             NomeVeiculo = "";
-            Preco = "";
+            Preco = 0;
             DataAluguel = "";
             DataDevolucao = "";
             Estado = false;

@@ -32,6 +32,7 @@
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadVeiculo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCadAlugle = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCadCliente,
-            this.mnuCadVeiculo});
+            this.mnuCadVeiculo,
+            this.mnuCadAlugle});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -68,6 +70,13 @@
             this.mnuCadVeiculo.Text = "Veículo";
             this.mnuCadVeiculo.Click += new System.EventHandler(this.mnuCadVeiculo_Click);
             // 
+            // mnuCadAlugle
+            // 
+            this.mnuCadAlugle.Name = "mnuCadAlugle";
+            this.mnuCadAlugle.Size = new System.Drawing.Size(180, 22);
+            this.mnuCadAlugle.Text = "Aluguel";
+            this.mnuCadAlugle.Click += new System.EventHandler(this.mnuCadAlugle_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,6 +87,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -91,6 +101,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCadCliente;
         private System.Windows.Forms.ToolStripMenuItem mnuCadVeiculo;
+        private System.Windows.Forms.ToolStripMenuItem mnuCadAlugle;
     }
 }
 

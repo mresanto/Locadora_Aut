@@ -77,6 +77,7 @@ namespace Locadora.Formularios
                 grdPesquisar.Rows.Clear();
 
                 ClienteAction clienteAction = new ClienteAction();
+                
 
                 var lista = clienteAction.Lista(txtPesquisarNome.Text);
 

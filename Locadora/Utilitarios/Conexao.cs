@@ -16,7 +16,7 @@ namespace Locadora.Utilitarios
 
         public Conexao()
         {
-            string ConnectionString = "Server=localhost;Port=3306;Database=db_locadora;Uid=sa;Pwd=1234567;";
+            string ConnectionString = "Server=localhost;Port=3307;Database=db_locadora;Uid=sa;Pwd=1234567;";
 
             _connection = new MySqlConnection(ConnectionString);
             _command = new MySqlCommand();

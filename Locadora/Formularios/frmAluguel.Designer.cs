@@ -30,30 +30,34 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPesquisar = new System.Windows.Forms.TabPage();
-            this.grdPesquisar = new System.Windows.Forms.DataGridView();
+            this.grdPesquisarAluguel = new System.Windows.Forms.DataGridView();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtPesquisarNome = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.tabCadastro = new System.Windows.Forms.TabPage();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.txtPesquisarDataAluguel = new System.Windows.Forms.TextBox();
+            this.btnPesquisarAluguel = new System.Windows.Forms.Button();
+            this.tabCadastroAluguel = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDataDevAluguel = new System.Windows.Forms.TextBox();
+            this.btnNovoAluguel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDataAluguel = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecoAluguel = new System.Windows.Forms.TextBox();
+            this.btnSalvarAluguel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPesquisar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisar)).BeginInit();
-            this.tabCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarAluguel)).BeginInit();
+            this.tabCadastroAluguel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPesquisar);
-            this.tabControl1.Controls.Add(this.tabCadastro);
+            this.tabControl1.Controls.Add(this.tabCadastroAluguel);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -62,10 +66,10 @@
             // 
             // tabPesquisar
             // 
-            this.tabPesquisar.Controls.Add(this.grdPesquisar);
+            this.tabPesquisar.Controls.Add(this.grdPesquisarAluguel);
             this.tabPesquisar.Controls.Add(this.lblNome);
-            this.tabPesquisar.Controls.Add(this.txtPesquisarNome);
-            this.tabPesquisar.Controls.Add(this.btnPesquisar);
+            this.tabPesquisar.Controls.Add(this.txtPesquisarDataAluguel);
+            this.tabPesquisar.Controls.Add(this.btnPesquisarAluguel);
             this.tabPesquisar.Location = new System.Drawing.Point(4, 22);
             this.tabPesquisar.Name = "tabPesquisar";
             this.tabPesquisar.Padding = new System.Windows.Forms.Padding(3);
@@ -74,13 +78,14 @@
             this.tabPesquisar.Text = "Pesquisar";
             this.tabPesquisar.UseVisualStyleBackColor = true;
             // 
-            // grdPesquisar
+            // grdPesquisarAluguel
             // 
-            this.grdPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPesquisar.Location = new System.Drawing.Point(14, 58);
-            this.grdPesquisar.Name = "grdPesquisar";
-            this.grdPesquisar.Size = new System.Drawing.Size(529, 503);
-            this.grdPesquisar.TabIndex = 3;
+            this.grdPesquisarAluguel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdPesquisarAluguel.Location = new System.Drawing.Point(14, 58);
+            this.grdPesquisarAluguel.Name = "grdPesquisarAluguel";
+            this.grdPesquisarAluguel.Size = new System.Drawing.Size(529, 503);
+            this.grdPesquisarAluguel.TabIndex = 3;
+            this.grdPesquisarAluguel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPesquisar_CellContentClick);
             // 
             // lblNome
             // 
@@ -91,54 +96,94 @@
             this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome:";
             // 
-            // txtPesquisarNome
+            // txtPesquisarDataAluguel
             // 
-            this.txtPesquisarNome.Location = new System.Drawing.Point(14, 31);
-            this.txtPesquisarNome.Name = "txtPesquisarNome";
-            this.txtPesquisarNome.Size = new System.Drawing.Size(404, 20);
-            this.txtPesquisarNome.TabIndex = 1;
+            this.txtPesquisarDataAluguel.Location = new System.Drawing.Point(14, 31);
+            this.txtPesquisarDataAluguel.Name = "txtPesquisarDataAluguel";
+            this.txtPesquisarDataAluguel.Size = new System.Drawing.Size(404, 20);
+            this.txtPesquisarDataAluguel.TabIndex = 1;
             // 
-            // btnPesquisar
+            // btnPesquisarAluguel
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(434, 16);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(109, 35);
-            this.btnPesquisar.TabIndex = 0;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisarAluguel.Location = new System.Drawing.Point(434, 16);
+            this.btnPesquisarAluguel.Name = "btnPesquisarAluguel";
+            this.btnPesquisarAluguel.Size = new System.Drawing.Size(109, 35);
+            this.btnPesquisarAluguel.TabIndex = 0;
+            this.btnPesquisarAluguel.Text = "Pesquisar";
+            this.btnPesquisarAluguel.UseVisualStyleBackColor = true;
+            this.btnPesquisarAluguel.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // tabCadastro
+            // tabCadastroAluguel
             // 
-            this.tabCadastro.Controls.Add(this.label4);
-            this.tabCadastro.Controls.Add(this.textBox1);
-            this.tabCadastro.Controls.Add(this.btnNovo);
-            this.tabCadastro.Controls.Add(this.label2);
-            this.tabCadastro.Controls.Add(this.txtDataAluguel);
-            this.tabCadastro.Controls.Add(this.btnExcluir);
-            this.tabCadastro.Controls.Add(this.label1);
-            this.tabCadastro.Controls.Add(this.txtPreco);
-            this.tabCadastro.Controls.Add(this.btnSalvar);
-            this.tabCadastro.Location = new System.Drawing.Point(4, 22);
-            this.tabCadastro.Name = "tabCadastro";
-            this.tabCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCadastro.Size = new System.Drawing.Size(562, 581);
-            this.tabCadastro.TabIndex = 0;
-            this.tabCadastro.Text = "Principal";
-            this.tabCadastro.UseVisualStyleBackColor = true;
+            this.tabCadastroAluguel.Controls.Add(this.label5);
+            this.tabCadastroAluguel.Controls.Add(this.cmbVeiculo);
+            this.tabCadastroAluguel.Controls.Add(this.label3);
+            this.tabCadastroAluguel.Controls.Add(this.cmbCliente);
+            this.tabCadastroAluguel.Controls.Add(this.label4);
+            this.tabCadastroAluguel.Controls.Add(this.txtDataDevAluguel);
+            this.tabCadastroAluguel.Controls.Add(this.btnNovoAluguel);
+            this.tabCadastroAluguel.Controls.Add(this.label2);
+            this.tabCadastroAluguel.Controls.Add(this.txtDataAluguel);
+            this.tabCadastroAluguel.Controls.Add(this.btnExcluir);
+            this.tabCadastroAluguel.Controls.Add(this.label1);
+            this.tabCadastroAluguel.Controls.Add(this.txtPrecoAluguel);
+            this.tabCadastroAluguel.Controls.Add(this.btnSalvarAluguel);
+            this.tabCadastroAluguel.Location = new System.Drawing.Point(4, 22);
+            this.tabCadastroAluguel.Name = "tabCadastroAluguel";
+            this.tabCadastroAluguel.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCadastroAluguel.Size = new System.Drawing.Size(562, 581);
+            this.tabCadastroAluguel.TabIndex = 0;
+            this.tabCadastroAluguel.Text = "Principal";
+            this.tabCadastroAluguel.UseVisualStyleBackColor = true;
             // 
-            // btnNovo
+            // label3
             // 
-            this.btnNovo.Location = new System.Drawing.Point(124, 106);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(109, 35);
-            this.btnNovo.TabIndex = 5;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Cliente:";
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(6, 27);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(257, 21);
+            this.cmbCliente.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(162, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Data de devolução:";
+            // 
+            // txtDataDevAluguel
+            // 
+            this.txtDataDevAluguel.Location = new System.Drawing.Point(162, 67);
+            this.txtDataDevAluguel.MaxLength = 16;
+            this.txtDataDevAluguel.Name = "txtDataDevAluguel";
+            this.txtDataDevAluguel.Size = new System.Drawing.Size(71, 20);
+            this.txtDataDevAluguel.TabIndex = 11;
+            // 
+            // btnNovoAluguel
+            // 
+            this.btnNovoAluguel.Location = new System.Drawing.Point(124, 106);
+            this.btnNovoAluguel.Name = "btnNovoAluguel";
+            this.btnNovoAluguel.Size = new System.Drawing.Size(109, 35);
+            this.btnNovoAluguel.TabIndex = 5;
+            this.btnNovoAluguel.Text = "Novo";
+            this.btnNovoAluguel.UseVisualStyleBackColor = true;
+            this.btnNovoAluguel.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 13);
+            this.label2.Location = new System.Drawing.Point(78, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 8;
@@ -146,7 +191,7 @@
             // 
             // txtDataAluguel
             // 
-            this.txtDataAluguel.Location = new System.Drawing.Point(78, 29);
+            this.txtDataAluguel.Location = new System.Drawing.Point(78, 67);
             this.txtDataAluguel.MaxLength = 16;
             this.txtDataAluguel.Name = "txtDataAluguel";
             this.txtDataAluguel.Size = new System.Drawing.Size(71, 20);
@@ -160,49 +205,51 @@
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 13);
+            this.label1.Location = new System.Drawing.Point(6, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Preço:";
             // 
-            // txtPreco
+            // txtPrecoAluguel
             // 
-            this.txtPreco.Location = new System.Drawing.Point(6, 29);
-            this.txtPreco.MaxLength = 30;
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(66, 20);
-            this.txtPreco.TabIndex = 1;
+            this.txtPrecoAluguel.Location = new System.Drawing.Point(6, 67);
+            this.txtPrecoAluguel.MaxLength = 30;
+            this.txtPrecoAluguel.Name = "txtPrecoAluguel";
+            this.txtPrecoAluguel.Size = new System.Drawing.Size(66, 20);
+            this.txtPrecoAluguel.TabIndex = 1;
             // 
-            // btnSalvar
+            // btnSalvarAluguel
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(9, 106);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(109, 35);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvarAluguel.Location = new System.Drawing.Point(9, 106);
+            this.btnSalvarAluguel.Name = "btnSalvarAluguel";
+            this.btnSalvarAluguel.Size = new System.Drawing.Size(109, 35);
+            this.btnSalvarAluguel.TabIndex = 4;
+            this.btnSalvarAluguel.Text = "Salvar";
+            this.btnSalvarAluguel.UseVisualStyleBackColor = true;
+            this.btnSalvarAluguel.Click += new System.EventHandler(this.btnSalvarAluguel_Click);
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Data de devolução:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(269, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Veiculo:";
             // 
-            // textBox1
+            // cmbVeiculo
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 29);
-            this.textBox1.MaxLength = 16;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(71, 20);
-            this.textBox1.TabIndex = 11;
+            this.cmbVeiculo.FormattingEnabled = true;
+            this.cmbVeiculo.Location = new System.Drawing.Point(269, 27);
+            this.cmbVeiculo.Name = "cmbVeiculo";
+            this.cmbVeiculo.Size = new System.Drawing.Size(257, 21);
+            this.cmbVeiculo.TabIndex = 15;
             // 
             // frmAluguel
             // 
@@ -212,12 +259,13 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmAluguel";
             this.Text = "frmAluguel";
+            this.Load += new System.EventHandler(this.frmAluguel_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPesquisar.ResumeLayout(false);
             this.tabPesquisar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisar)).EndInit();
-            this.tabCadastro.ResumeLayout(false);
-            this.tabCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarAluguel)).EndInit();
+            this.tabCadastroAluguel.ResumeLayout(false);
+            this.tabCadastroAluguel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,19 +274,23 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPesquisar;
-        private System.Windows.Forms.DataGridView grdPesquisar;
+        private System.Windows.Forms.DataGridView grdPesquisarAluguel;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtPesquisarNome;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TabPage tabCadastro;
-        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.TextBox txtPesquisarDataAluguel;
+        private System.Windows.Forms.Button btnPesquisarAluguel;
+        private System.Windows.Forms.TabPage tabCadastroAluguel;
+        private System.Windows.Forms.Button btnNovoAluguel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDataAluguel;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtPrecoAluguel;
+        private System.Windows.Forms.Button btnSalvarAluguel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDataDevAluguel;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbVeiculo;
     }
 }

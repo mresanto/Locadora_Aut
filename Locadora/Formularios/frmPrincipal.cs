@@ -30,5 +30,17 @@ namespace Locadora
             var form = new frmVeiculo();
             form.Show();
         }
+
+
+        private void mnuCadAlugle_Click(object sender, EventArgs e)
+        {
+            var form = new frmAluguel();
+            form.Show();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

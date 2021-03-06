@@ -92,10 +92,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action\AluguelAction.cs" />
     <Compile Include="Action\ClienteAction.cs" />
     <Compile Include="Action\VeiculoAction.cs" />
+    <Compile Include="Classes\Aluguel.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\Veiculo.cs" />
+    <Compile Include="Formularios\frmAluguel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAluguel.Designer.cs">
+      <DependentUpon>frmAluguel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +126,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilitarios\Conexao.cs" />
     <Compile Include="Utilitarios\Funcoes.cs" />
+    <Compile Include="Utilitarios\Item.cs" />
+    <EmbeddedResource Include="Formularios\frmAluguel.resx">
+      <DependentUpon>frmAluguel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
