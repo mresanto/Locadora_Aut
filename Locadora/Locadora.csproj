@@ -94,9 +94,11 @@
   <ItemGroup>
     <Compile Include="Action\AluguelAction.cs" />
     <Compile Include="Action\ClienteAction.cs" />
+    <Compile Include="Action\MultaAction.cs" />
     <Compile Include="Action\VeiculoAction.cs" />
     <Compile Include="Classes\Aluguel.cs" />
     <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Multa.cs" />
     <Compile Include="Classes\Veiculo.cs" />
     <Compile Include="Formularios\frmAluguel.cs">
       <SubType>Form</SubType>

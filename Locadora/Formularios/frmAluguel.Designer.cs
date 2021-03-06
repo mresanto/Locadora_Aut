@@ -35,6 +35,12 @@
             this.txtPesquisarDataAluguel = new System.Windows.Forms.TextBox();
             this.btnPesquisarAluguel = new System.Windows.Forms.Button();
             this.tabCadastroAluguel = new System.Windows.Forms.TabPage();
+            this.grdPesquisarMulta = new System.Windows.Forms.DataGridView();
+            this.txtPesquisarIdMulta = new System.Windows.Forms.Label();
+            this.txtPesquisarMulta = new System.Windows.Forms.TextBox();
+            this.btnPesquisarMulta = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,18 +52,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecoAluguel = new System.Windows.Forms.TextBox();
             this.btnSalvarAluguel = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
+            this.tabMulta = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtInfoMulta = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPrecoMulta = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDataMulta = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddMulta = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbmMulta = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPesquisar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarAluguel)).BeginInit();
             this.tabCadastroAluguel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarMulta)).BeginInit();
+            this.tabMulta.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPesquisar);
             this.tabControl1.Controls.Add(this.tabCadastroAluguel);
+            this.tabControl1.Controls.Add(this.tabMulta);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -115,6 +135,11 @@
             // 
             // tabCadastroAluguel
             // 
+            this.tabCadastroAluguel.Controls.Add(this.btnAddMulta);
+            this.tabCadastroAluguel.Controls.Add(this.grdPesquisarMulta);
+            this.tabCadastroAluguel.Controls.Add(this.txtPesquisarIdMulta);
+            this.tabCadastroAluguel.Controls.Add(this.txtPesquisarMulta);
+            this.tabCadastroAluguel.Controls.Add(this.btnPesquisarMulta);
             this.tabCadastroAluguel.Controls.Add(this.label5);
             this.tabCadastroAluguel.Controls.Add(this.cmbVeiculo);
             this.tabCadastroAluguel.Controls.Add(this.label3);
@@ -135,6 +160,57 @@
             this.tabCadastroAluguel.TabIndex = 0;
             this.tabCadastroAluguel.Text = "Principal";
             this.tabCadastroAluguel.UseVisualStyleBackColor = true;
+            // 
+            // grdPesquisarMulta
+            // 
+            this.grdPesquisarMulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdPesquisarMulta.Location = new System.Drawing.Point(9, 197);
+            this.grdPesquisarMulta.Name = "grdPesquisarMulta";
+            this.grdPesquisarMulta.Size = new System.Drawing.Size(529, 378);
+            this.grdPesquisarMulta.TabIndex = 20;
+            // 
+            // txtPesquisarIdMulta
+            // 
+            this.txtPesquisarIdMulta.AutoSize = true;
+            this.txtPesquisarIdMulta.Location = new System.Drawing.Point(9, 154);
+            this.txtPesquisarIdMulta.Name = "txtPesquisarIdMulta";
+            this.txtPesquisarIdMulta.Size = new System.Drawing.Size(19, 13);
+            this.txtPesquisarIdMulta.TabIndex = 19;
+            this.txtPesquisarIdMulta.Text = "Id:";
+            // 
+            // txtPesquisarMulta
+            // 
+            this.txtPesquisarMulta.Location = new System.Drawing.Point(9, 170);
+            this.txtPesquisarMulta.Name = "txtPesquisarMulta";
+            this.txtPesquisarMulta.Size = new System.Drawing.Size(404, 20);
+            this.txtPesquisarMulta.TabIndex = 18;
+            // 
+            // btnPesquisarMulta
+            // 
+            this.btnPesquisarMulta.Location = new System.Drawing.Point(429, 155);
+            this.btnPesquisarMulta.Name = "btnPesquisarMulta";
+            this.btnPesquisarMulta.Size = new System.Drawing.Size(109, 35);
+            this.btnPesquisarMulta.TabIndex = 17;
+            this.btnPesquisarMulta.Text = "Pesquisar";
+            this.btnPesquisarMulta.UseVisualStyleBackColor = true;
+            this.btnPesquisarMulta.Click += new System.EventHandler(this.btnPesquisarMulta_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(269, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Veiculo:";
+            // 
+            // cmbVeiculo
+            // 
+            this.cmbVeiculo.FormattingEnabled = true;
+            this.cmbVeiculo.Location = new System.Drawing.Point(269, 27);
+            this.cmbVeiculo.Name = "cmbVeiculo";
+            this.cmbVeiculo.Size = new System.Drawing.Size(257, 21);
+            this.cmbVeiculo.TabIndex = 15;
             // 
             // label3
             // 
@@ -234,22 +310,132 @@
             this.btnSalvarAluguel.UseVisualStyleBackColor = true;
             this.btnSalvarAluguel.Click += new System.EventHandler(this.btnSalvarAluguel_Click);
             // 
-            // label5
+            // tabMulta
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(269, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Veiculo:";
+            this.tabMulta.Controls.Add(this.label9);
+            this.tabMulta.Controls.Add(this.cbmMulta);
+            this.tabMulta.Controls.Add(this.label6);
+            this.tabMulta.Controls.Add(this.txtInfoMulta);
+            this.tabMulta.Controls.Add(this.button2);
+            this.tabMulta.Controls.Add(this.label7);
+            this.tabMulta.Controls.Add(this.txtPrecoMulta);
+            this.tabMulta.Controls.Add(this.button3);
+            this.tabMulta.Controls.Add(this.label8);
+            this.tabMulta.Controls.Add(this.txtDataMulta);
+            this.tabMulta.Controls.Add(this.button4);
+            this.tabMulta.Location = new System.Drawing.Point(4, 22);
+            this.tabMulta.Name = "tabMulta";
+            this.tabMulta.Size = new System.Drawing.Size(562, 581);
+            this.tabMulta.TabIndex = 2;
+            this.tabMulta.Text = "Multa";
+            this.tabMulta.UseVisualStyleBackColor = true;
             // 
-            // cmbVeiculo
+            // label6
             // 
-            this.cmbVeiculo.FormattingEnabled = true;
-            this.cmbVeiculo.Location = new System.Drawing.Point(269, 27);
-            this.cmbVeiculo.Name = "cmbVeiculo";
-            this.cmbVeiculo.Size = new System.Drawing.Size(257, 21);
-            this.cmbVeiculo.TabIndex = 15;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Info:";
+            // 
+            // txtInfoMulta
+            // 
+            this.txtInfoMulta.Location = new System.Drawing.Point(20, 157);
+            this.txtInfoMulta.MaxLength = 16;
+            this.txtInfoMulta.Multiline = true;
+            this.txtInfoMulta.Name = "txtInfoMulta";
+            this.txtInfoMulta.Size = new System.Drawing.Size(453, 258);
+            this.txtInfoMulta.TabIndex = 20;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(135, 74);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 35);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Novo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnNovo_ClickMulta);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(89, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Preço:";
+            // 
+            // txtPrecoMulta
+            // 
+            this.txtPrecoMulta.Location = new System.Drawing.Point(89, 35);
+            this.txtPrecoMulta.MaxLength = 16;
+            this.txtPrecoMulta.Name = "txtPrecoMulta";
+            this.txtPrecoMulta.Size = new System.Drawing.Size(71, 20);
+            this.txtPrecoMulta.TabIndex = 14;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(250, 74);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 35);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Excluir";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Data:";
+            // 
+            // txtDataMulta
+            // 
+            this.txtDataMulta.Location = new System.Drawing.Point(17, 35);
+            this.txtDataMulta.MaxLength = 30;
+            this.txtDataMulta.Name = "txtDataMulta";
+            this.txtDataMulta.Size = new System.Drawing.Size(66, 20);
+            this.txtDataMulta.TabIndex = 13;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(20, 74);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(109, 35);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Salvar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnSalvarMulta_Click);
+            // 
+            // btnAddMulta
+            // 
+            this.btnAddMulta.Location = new System.Drawing.Point(354, 106);
+            this.btnAddMulta.Name = "btnAddMulta";
+            this.btnAddMulta.Size = new System.Drawing.Size(109, 35);
+            this.btnAddMulta.TabIndex = 21;
+            this.btnAddMulta.Text = "Adicionar Multa";
+            this.btnAddMulta.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(191, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Cliente Multa";
+            // 
+            // cbmMulta
+            // 
+            this.cbmMulta.FormattingEnabled = true;
+            this.cbmMulta.Location = new System.Drawing.Point(191, 34);
+            this.cbmMulta.Name = "cbmMulta";
+            this.cbmMulta.Size = new System.Drawing.Size(257, 21);
+            this.cbmMulta.TabIndex = 22;
             // 
             // frmAluguel
             // 
@@ -266,6 +452,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarAluguel)).EndInit();
             this.tabCadastroAluguel.ResumeLayout(false);
             this.tabCadastroAluguel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarMulta)).EndInit();
+            this.tabMulta.ResumeLayout(false);
+            this.tabMulta.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +481,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbVeiculo;
+        private System.Windows.Forms.DataGridView grdPesquisarMulta;
+        private System.Windows.Forms.Label txtPesquisarIdMulta;
+        private System.Windows.Forms.TextBox txtPesquisarMulta;
+        private System.Windows.Forms.Button btnPesquisarMulta;
+        private System.Windows.Forms.TabPage tabMulta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtInfoMulta;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPrecoMulta;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDataMulta;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAddMulta;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbmMulta;
     }
 }

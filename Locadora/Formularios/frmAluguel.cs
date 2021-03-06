@@ -17,11 +17,13 @@ namespace Locadora.Formularios
     public partial class frmAluguel : Form
     {
         public int _idAluguel;
+        public int _idMulta;
         private Funcoes _funcoes = new Funcoes();  
 
         public frmAluguel()
         {
             InitializeComponent();
+            ConfiguraGridAluguel();
             ConfiguraGridAluguel();
             btnPesquisar_Click(null, null);
         }
@@ -80,6 +82,45 @@ namespace Locadora.Formularios
 
         }
 
+        private void ConfiguraGridMulta()
+        {
+            try
+            {
+                grdPesquisarMulta.DataSource = null;
+                grdPesquisarMulta.ColumnCount = 0;
+
+                grdPesquisarMulta.Columns.Add(new DataGridViewButtonColumn());
+                grdPesquisarMulta.Columns.Add(new DataGridViewTextBoxColumn());
+                grdPesquisarMulta.Columns.Add(new DataGridViewTextBoxColumn());
+
+                grdPesquisarMulta.Columns[0].Name = "selecionar";
+                grdPesquisarMulta.Columns[1].Name = "idMulta";
+                grdPesquisarMulta.Columns[2].Name = "dataMulta";
+
+                grdPesquisarMulta.Columns["selecionar"].Width = 80;
+                grdPesquisarMulta.Columns["idMulta"].Width = 60;
+                grdPesquisarMulta.Columns["dataMulta"].Width = 350;
+
+                grdPesquisarMulta.Columns["selecionar"].HeaderText = "";
+                grdPesquisarMulta.Columns["idMulta"].HeaderText = "ID";
+                grdPesquisarMulta.Columns["dataMulta"].HeaderText = "Nome";
+
+                grdPesquisarMulta.Columns["idMulta"].ReadOnly = true;
+                grdPesquisarMulta.Columns["dataMulta"].ReadOnly = true;
+
+                grdPesquisarMulta.AllowUserToAddRows = false;
+                grdPesquisarMulta.AllowUserToDeleteRows = false;
+                grdPesquisarMulta.RowHeadersVisible = false;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
+            }
+
+        }
+
+
         public void btnPesquisar_Click(object sender, EventArgs e)
         {
             try
@@ -110,6 +151,55 @@ namespace Locadora.Formularios
             }
         }
 
+        public void btnPesquisarMulta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                grdPesquisarMulta.Rows.Clear();
+
+                MultaAction multaAction = new MultaAction();
+
+
+                var lista = multaAction.Lista(txtPesquisarMulta.Text);
+
+                if (lista.Count > 0)
+                {
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        grdPesquisarMulta.Rows.Add();
+
+                        grdPesquisarMulta.Rows[i].Cells["selecionar"].Value = "Exibir";
+                        grdPesquisarMulta.Rows[i].Cells["idMulta"].Value = lista[i].idMulta.ToString();
+                        grdPesquisarMulta.Rows[i].Cells["dataMulta"].Value = lista[i].dataMulta.ToString();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
+            }
+        }
+
+        private void grdPesquisarMulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (grdPesquisarAluguel.RowCount > 0)
+                {
+                    if (e.RowIndex > -1 && grdPesquisarAluguel.Rows[e.RowIndex].Cells["selecionar"].Selected)
+                    {
+                        var idMulta = grdPesquisarAluguel.Rows[e.RowIndex].Cells["idMulta"].Value.ToString();
+                        ExibirMulta(Convert.ToInt32(idMulta));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
+            }
+        }
+
         private void grdPesquisar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -122,6 +212,31 @@ namespace Locadora.Formularios
                         ExibirAluguel(Convert.ToInt32(idAluguel));
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
+            }
+        }
+
+
+        private void ExibirMulta(int idMulta)
+        {
+            try
+            {
+                MultaAction multaAction = new MultaAction();
+
+                var multa = multaAction.Detalhe(Convert.ToInt32(idMulta));
+
+                _idAluguel = multa.idMulta;
+                txtDataMulta.Text = multa.dataMulta;
+                txtPrecoMulta.Text = multa.precoMulta.ToString();
+                txtInfoMulta.Text = multa.infoMulta;
+
+                cbmMulta.SelectedIndex = cbmMulta.FindStringExact(Convert.ToString(multa.idAluguel));
+
+
+                tabControl1.SelectedTab = tabMulta;
             }
             catch (Exception ex)
             {
@@ -155,6 +270,10 @@ namespace Locadora.Formularios
             }
         }
 
+        
+        
+        
+
         public void btnNovo_Click(object sender, EventArgs e)
         {
             _idAluguel = 0;
@@ -163,6 +282,14 @@ namespace Locadora.Formularios
             txtPrecoAluguel.Text = "";
             cmbCliente.SelectedIndex = -1;
             cmbVeiculo.SelectedIndex = -1;
+        }
+
+        public void btnNovo_ClickMulta(object sender, EventArgs e)
+        {
+            _idMulta = 0;
+            txtDataMulta.Text = "";
+            txtInfoMulta.Text = "";
+            txtPrecoMulta.Text = "";
         }
 
 
@@ -201,6 +328,49 @@ namespace Locadora.Formularios
                 else
                 {
                     MessageBox.Show("Houve um erro ao Salvar!", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
+            }
+
+
+        }
+
+        private void btnSalvarMulta_Click(object sender, EventArgs e)
+        {
+            //AluguelAction aluguelAction = new AluguelAction
+            try
+            {
+
+                if (ValidaCampos() == false)
+                {
+                    return;
+                }
+
+                MultaAction multaAction = new MultaAction();
+                Multa multa = new Multa();
+
+                multa.idMulta = Convert.ToInt32(_idMulta);
+                multa.idAluguel = Convert.ToInt32(_idAluguel);
+                multa.dataMulta = txtDataMulta.Text;
+                multa.precoMulta = Convert.ToInt32(txtPrecoMulta.Text);
+                multa.infoMulta = txtInfoMulta.Text;
+
+                var retorno = multaAction.Salvar(multa);
+
+                if (retorno)
+                {
+                    MessageBox.Show("Multa Cadastrado com Sucesso!", "Multa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnNovo_Click(null, null);
+                    btnPesquisar_Click(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro ao Salvar!", "Multa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
