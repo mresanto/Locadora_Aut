@@ -24,7 +24,7 @@ namespace Locadora.Action
 
                 _con.Comando.Parameters.Clear();
 
-                _con.Comando.CommandText = " select id_cliente, nome_cliente, id_veiculo, nome_veiculo, id_aluguel, preco_aluguel, data_aluguel, data_devolucao" +
+                _con.Comando.CommandText = " select id_cliente, nome_cliente, id_veiculo, nome_veiculo, id_aluguel, preco_aluguel, date_format(data_aluguel, '%Y-%m-%d') as data_aluguel, date_format(data_devolucao, '%Y-%m-%d') as data_devolucao" +
                                            " FROM vw_aluguel" +
                                            " WHERE id_aluguel = @id_aluguel";
 
@@ -70,7 +70,7 @@ namespace Locadora.Action
                 var listaAluguel= new List<Aluguel>();
 
                 _con.Comando.Parameters.Clear();
-                _con.Comando.CommandText =  " select id_cliente, nome_cliente, id_veiculo, nome_veiculo, id_aluguel, preco_aluguel, data_aluguel, data_devolucao" +
+                _con.Comando.CommandText = " select id_cliente, nome_cliente, id_veiculo, nome_veiculo, id_aluguel, preco_aluguel, date_format(data_aluguel, '%Y-%m-%d') as data_aluguel, date_format(data_devolucao, '%Y-%m-%d') as data_devolucao" +
                                             " FROM vw_aluguel";
                 if(nome != "")
                 {
@@ -125,7 +125,7 @@ namespace Locadora.Action
                 }
                 else
                 {
-                    _con.Comando.CommandText = "UPDATE aluguel SET id_aluguel=@id_aluguel, preco_aluguel=@preco_aluguel, data_aluguel=@data_aluguel, data_devolucao=@data_devolucao, estado_aluguel = @estado_aluguel, fk_id_cliente = @id_cliente, fk_id_veiculo = @id_veiculo" +
+                    _con.Comando.CommandText = "UPDATE aluguel SET preco_aluguel=@preco_aluguel, data_aluguel=@data_aluguel, data_devolucao=@data_devolucao, fk_id_cliente = @fk_id_cliente, fk_id_veiculo = @fk_id_veiculo " +
                                                "WHERE id_aluguel = @id_aluguel";
 
                     _con.Comando.Parameters.Add(Funcoes.ParametrosInsercao(aluguel.IdAluguel, "@id_aluguel", DbType.Int32));

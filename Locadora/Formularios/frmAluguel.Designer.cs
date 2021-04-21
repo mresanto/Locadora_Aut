@@ -244,9 +244,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(243, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(164, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Data de devolução:";
+            this.label4.Text = "Data de devolução: (yyyy-mm-dd)";
             // 
             // txtDataDevAluguel
             // 
@@ -271,9 +271,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(78, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(148, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Data do aluguel:";
+            this.label2.Text = "Data do aluguel: (yyyy-mm-dd)";
             // 
             // txtDataAluguel
             // 

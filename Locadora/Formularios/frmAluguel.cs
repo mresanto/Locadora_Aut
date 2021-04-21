@@ -65,7 +65,7 @@ namespace Locadora.Formularios
                 grdPesquisarAluguel.Columns["idAluguel"].HeaderText = "ID";
                 grdPesquisarAluguel.Columns["nome"].HeaderText = "Nome";
 
-                grdPesquisarAluguel.Columns["idAluguel"].Visible = false;
+                grdPesquisarAluguel.Columns["idAluguel"].Visible = true;
 
                 grdPesquisarAluguel.Columns["idAluguel"].ReadOnly = true;
                 grdPesquisarAluguel.Columns["nome"].ReadOnly = true;
@@ -252,7 +252,7 @@ namespace Locadora.Formularios
 
                 var aluguel = aluguelAction.Detalhe(Convert.ToInt32(idAluguel));
 
-                _idAluguel = aluguel.IdCliente;
+                _idAluguel = aluguel.IdAluguel;
                 txtDataAluguel.Text = aluguel.DataAluguel;
                 txtDataDevAluguel.Text = aluguel.DataDevolucao;
                 txtPrecoAluguel.Text = Convert.ToString(aluguel.Preco);
