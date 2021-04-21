@@ -35,6 +35,7 @@
             this.txtPesquisarDataAluguel = new System.Windows.Forms.TextBox();
             this.btnPesquisarAluguel = new System.Windows.Forms.Button();
             this.tabCadastroAluguel = new System.Windows.Forms.TabPage();
+            this.btnAddMulta = new System.Windows.Forms.Button();
             this.grdPesquisarMulta = new System.Windows.Forms.DataGridView();
             this.txtPesquisarIdMulta = new System.Windows.Forms.Label();
             this.txtPesquisarMulta = new System.Windows.Forms.TextBox();
@@ -53,6 +54,8 @@
             this.txtPrecoAluguel = new System.Windows.Forms.TextBox();
             this.btnSalvarAluguel = new System.Windows.Forms.Button();
             this.tabMulta = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbmMulta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtInfoMulta = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,9 +65,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDataMulta = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnAddMulta = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbmMulta = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPesquisar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPesquisarAluguel)).BeginInit();
@@ -161,6 +161,16 @@
             this.tabCadastroAluguel.Text = "Principal";
             this.tabCadastroAluguel.UseVisualStyleBackColor = true;
             // 
+            // btnAddMulta
+            // 
+            this.btnAddMulta.Location = new System.Drawing.Point(354, 106);
+            this.btnAddMulta.Name = "btnAddMulta";
+            this.btnAddMulta.Size = new System.Drawing.Size(109, 35);
+            this.btnAddMulta.TabIndex = 21;
+            this.btnAddMulta.Text = "Adicionar Multa";
+            this.btnAddMulta.UseVisualStyleBackColor = true;
+            this.btnAddMulta.Click += new System.EventHandler(this.btnSalvarMulta_Click);
+            // 
             // grdPesquisarMulta
             // 
             this.grdPesquisarMulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -232,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 51);
+            this.label4.Location = new System.Drawing.Point(243, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 12;
@@ -240,10 +250,10 @@
             // 
             // txtDataDevAluguel
             // 
-            this.txtDataDevAluguel.Location = new System.Drawing.Point(162, 67);
+            this.txtDataDevAluguel.Location = new System.Drawing.Point(243, 67);
             this.txtDataDevAluguel.MaxLength = 16;
             this.txtDataDevAluguel.Name = "txtDataDevAluguel";
-            this.txtDataDevAluguel.Size = new System.Drawing.Size(71, 20);
+            this.txtDataDevAluguel.Size = new System.Drawing.Size(161, 20);
             this.txtDataDevAluguel.TabIndex = 11;
             // 
             // btnNovoAluguel
@@ -270,7 +280,7 @@
             this.txtDataAluguel.Location = new System.Drawing.Point(78, 67);
             this.txtDataAluguel.MaxLength = 16;
             this.txtDataAluguel.Name = "txtDataAluguel";
-            this.txtDataAluguel.Size = new System.Drawing.Size(71, 20);
+            this.txtDataAluguel.Size = new System.Drawing.Size(155, 20);
             this.txtDataAluguel.TabIndex = 2;
             // 
             // btnExcluir
@@ -329,6 +339,23 @@
             this.tabMulta.TabIndex = 2;
             this.tabMulta.Text = "Multa";
             this.tabMulta.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(191, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Cliente Multa";
+            // 
+            // cbmMulta
+            // 
+            this.cbmMulta.FormattingEnabled = true;
+            this.cbmMulta.Location = new System.Drawing.Point(191, 34);
+            this.cbmMulta.Name = "cbmMulta";
+            this.cbmMulta.Size = new System.Drawing.Size(257, 21);
+            this.cbmMulta.TabIndex = 22;
             // 
             // label6
             // 
@@ -410,32 +437,6 @@
             this.button4.Text = "Salvar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.btnSalvarMulta_Click);
-            // 
-            // btnAddMulta
-            // 
-            this.btnAddMulta.Location = new System.Drawing.Point(354, 106);
-            this.btnAddMulta.Name = "btnAddMulta";
-            this.btnAddMulta.Size = new System.Drawing.Size(109, 35);
-            this.btnAddMulta.TabIndex = 21;
-            this.btnAddMulta.Text = "Adicionar Multa";
-            this.btnAddMulta.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(191, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Cliente Multa";
-            // 
-            // cbmMulta
-            // 
-            this.cbmMulta.FormattingEnabled = true;
-            this.cbmMulta.Location = new System.Drawing.Point(191, 34);
-            this.cbmMulta.Name = "cbmMulta";
-            this.cbmMulta.Size = new System.Drawing.Size(257, 21);
-            this.cbmMulta.TabIndex = 22;
             // 
             // frmAluguel
             // 

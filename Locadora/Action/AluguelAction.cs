@@ -126,7 +126,7 @@ namespace Locadora.Action
                 else
                 {
                     _con.Comando.CommandText = "UPDATE aluguel SET id_aluguel=@id_aluguel, preco_aluguel=@preco_aluguel, data_aluguel=@data_aluguel, data_devolucao=@data_devolucao, estado_aluguel = @estado_aluguel, fk_id_cliente = @id_cliente, fk_id_veiculo = @id_veiculo" +
-                                               "WHERE id_cliente = @id_cliente";
+                                               "WHERE id_aluguel = @id_aluguel";
 
                     _con.Comando.Parameters.Add(Funcoes.ParametrosInsercao(aluguel.IdAluguel, "@id_aluguel", DbType.Int32));
                 }

@@ -103,7 +103,7 @@ namespace Locadora.Formularios
 
                 grdPesquisarMulta.Columns["selecionar"].HeaderText = "";
                 grdPesquisarMulta.Columns["idMulta"].HeaderText = "ID";
-                grdPesquisarMulta.Columns["dataMulta"].HeaderText = "Nome";
+                grdPesquisarMulta.Columns["dataMulta"].HeaderText = "Data";
 
                 grdPesquisarMulta.Columns["idMulta"].ReadOnly = true;
                 grdPesquisarMulta.Columns["dataMulta"].ReadOnly = true;
@@ -255,7 +255,6 @@ namespace Locadora.Formularios
                 _idAluguel = aluguel.IdCliente;
                 txtDataAluguel.Text = aluguel.DataAluguel;
                 txtDataDevAluguel.Text = aluguel.DataDevolucao;
-                txtPesquisarDataAluguel.Text = aluguel.DataAluguel;
                 txtPrecoAluguel.Text = Convert.ToString(aluguel.Preco);
 
 
@@ -269,10 +268,6 @@ namespace Locadora.Formularios
                 throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
             }
         }
-
-        
-        
-        
 
         public void btnNovo_Click(object sender, EventArgs e)
         {
@@ -291,8 +286,6 @@ namespace Locadora.Formularios
             txtInfoMulta.Text = "";
             txtPrecoMulta.Text = "";
         }
-
-
 
         private void btnSalvarAluguel_Click(object sender, EventArgs e)
         {
@@ -411,7 +404,6 @@ namespace Locadora.Formularios
             }
         }
 
-
         private bool ValidaCampos()
         {
             if (txtDataAluguel.Text == "")
@@ -428,7 +420,5 @@ namespace Locadora.Formularios
 
             return true;
         }
-
-
     }
 }
