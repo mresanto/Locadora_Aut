@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadAlugle = new System.Windows.Forms.ToolStripMenuItem();
+            this.picGatinho = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGatinho)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,11 +80,22 @@
             this.mnuCadAlugle.Text = "Aluguel";
             this.mnuCadAlugle.Click += new System.EventHandler(this.mnuCadAlugle_Click);
             // 
+            // picGatinho
+            // 
+            this.picGatinho.Image = ((System.Drawing.Image)(resources.GetObject("picGatinho.Image")));
+            this.picGatinho.Location = new System.Drawing.Point(12, 27);
+            this.picGatinho.Name = "picGatinho";
+            this.picGatinho.Size = new System.Drawing.Size(836, 628);
+            this.picGatinho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picGatinho.TabIndex = 1;
+            this.picGatinho.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 596);
+            this.Controls.Add(this.picGatinho);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
@@ -90,6 +104,7 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGatinho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCadCliente;
         private System.Windows.Forms.ToolStripMenuItem mnuCadVeiculo;
         private System.Windows.Forms.ToolStripMenuItem mnuCadAlugle;
+        private System.Windows.Forms.PictureBox picGatinho;
     }
 }
 

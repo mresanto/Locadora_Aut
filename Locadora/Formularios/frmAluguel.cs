@@ -24,7 +24,7 @@ namespace Locadora.Formularios
         {
             InitializeComponent();
             ConfiguraGridAluguel();
-            ConfiguraGridAluguel();
+            ConfiguraGridMulta();
             btnPesquisar_Click(null, null);
         }
 
@@ -65,7 +65,7 @@ namespace Locadora.Formularios
                 grdPesquisarAluguel.Columns["idAluguel"].HeaderText = "ID";
                 grdPesquisarAluguel.Columns["nome"].HeaderText = "Nome";
 
-                grdPesquisarAluguel.Columns["idAluguel"].Visible = true;
+                grdPesquisarAluguel.Columns["idAluguel"].Visible = false;
 
                 grdPesquisarAluguel.Columns["idAluguel"].ReadOnly = true;
                 grdPesquisarAluguel.Columns["nome"].ReadOnly = true;
@@ -104,6 +104,8 @@ namespace Locadora.Formularios
                 grdPesquisarMulta.Columns["selecionar"].HeaderText = "";
                 grdPesquisarMulta.Columns["idMulta"].HeaderText = "ID";
                 grdPesquisarMulta.Columns["dataMulta"].HeaderText = "Data";
+
+                grdPesquisarMulta.Columns["idMulta"].Visible = false;
 
                 grdPesquisarMulta.Columns["idMulta"].ReadOnly = true;
                 grdPesquisarMulta.Columns["dataMulta"].ReadOnly = true;
@@ -159,9 +161,14 @@ namespace Locadora.Formularios
 
                 MultaAction multaAction = new MultaAction();
 
+                
+                var lista = multaAction.Lista(-1, _idAluguel);
 
-                var lista = multaAction.Lista(txtPesquisarMulta.Text);
-
+                if (txtPesquisarMulta.Text != "")
+                {
+                    lista = multaAction.Lista(Convert.ToInt32(txtPesquisarMulta.Text), _idAluguel);
+                }
+                
                 if (lista.Count > 0)
                 {
                     for (int i = 0; i < lista.Count; i++)
@@ -170,7 +177,7 @@ namespace Locadora.Formularios
 
                         grdPesquisarMulta.Rows[i].Cells["selecionar"].Value = "Exibir";
                         grdPesquisarMulta.Rows[i].Cells["idMulta"].Value = lista[i].idMulta.ToString();
-                        grdPesquisarMulta.Rows[i].Cells["dataMulta"].Value = lista[i].dataMulta.ToString();
+                        grdPesquisarMulta.Rows[i].Cells["dataMulta"].Value = lista[i].data_multa.ToString();
 
                     }
                 }
@@ -185,11 +192,11 @@ namespace Locadora.Formularios
         {
             try
             {
-                if (grdPesquisarAluguel.RowCount > 0)
+                if (grdPesquisarMulta.RowCount > 0)
                 {
-                    if (e.RowIndex > -1 && grdPesquisarAluguel.Rows[e.RowIndex].Cells["selecionar"].Selected)
+                    if (e.RowIndex > -1 && grdPesquisarMulta.Rows[e.RowIndex].Cells["selecionar"].Selected)
                     {
-                        var idMulta = grdPesquisarAluguel.Rows[e.RowIndex].Cells["idMulta"].Value.ToString();
+                        var idMulta = grdPesquisarMulta.Rows[e.RowIndex].Cells["idMulta"].Value.ToString();
                         ExibirMulta(Convert.ToInt32(idMulta));
                     }
                 }
@@ -219,7 +226,6 @@ namespace Locadora.Formularios
             }
         }
 
-
         private void ExibirMulta(int idMulta)
         {
             try
@@ -228,13 +234,10 @@ namespace Locadora.Formularios
 
                 var multa = multaAction.Detalhe(Convert.ToInt32(idMulta));
 
-                _idAluguel = multa.idMulta;
-                txtDataMulta.Text = multa.dataMulta;
-                txtPrecoMulta.Text = multa.precoMulta.ToString();
-                txtInfoMulta.Text = multa.infoMulta;
-
-                cbmMulta.SelectedIndex = cbmMulta.FindStringExact(Convert.ToString(multa.idAluguel));
-
+                _idMulta = multa.idMulta;
+                txtDataMulta.Text = multa.data_multa;
+                txtPrecoMulta.Text = multa.preco_multa.ToString();
+                txtInfoMulta.Text = multa.info_multa;
 
                 tabControl1.SelectedTab = tabMulta;
             }
@@ -261,12 +264,18 @@ namespace Locadora.Formularios
                 cmbCliente.SelectedIndex = cmbCliente.FindStringExact(aluguel.NomeCliente);
                 cmbVeiculo.SelectedIndex = cmbVeiculo.FindStringExact(aluguel.NomeVeiculo);
 
+                btnPesquisarMulta_Click(null, null);
                 tabControl1.SelectedTab = tabCadastroAluguel;
             }
             catch (Exception ex)
             {
                 throw new Exception("Houve um erro ao tentar realizar uma operação [" + MethodBase.GetCurrentMethod().ToString() + "]: " + ex.Message);
             }
+        }
+
+        private void btnAddMulta_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabMulta;
         }
 
         public void btnNovo_Click(object sender, EventArgs e)
@@ -338,28 +347,22 @@ namespace Locadora.Formularios
             //AluguelAction aluguelAction = new AluguelAction
             try
             {
-
-                if (ValidaCampos() == false)
-                {
-                    return;
-                }
-
                 MultaAction multaAction = new MultaAction();
                 Multa multa = new Multa();
 
                 multa.idMulta = Convert.ToInt32(_idMulta);
-                multa.idAluguel = Convert.ToInt32(_idAluguel);
-                multa.dataMulta = txtDataMulta.Text;
-                multa.precoMulta = Convert.ToInt32(txtPrecoMulta.Text);
-                multa.infoMulta = txtInfoMulta.Text;
+                multa.id_aluguel = Convert.ToInt32(_idAluguel);
+                multa.data_multa = txtDataMulta.Text;
+                multa.preco_multa = Convert.ToInt32(txtPrecoMulta.Text);
+                multa.info_multa = txtInfoMulta.Text;
 
                 var retorno = multaAction.Salvar(multa);
 
                 if (retorno)
                 {
                     MessageBox.Show("Multa Cadastrado com Sucesso!", "Multa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnNovo_Click(null, null);
-                    btnPesquisar_Click(null, null);
+                    btnNovo_ClickMulta(null, null);
+                    btnPesquisarMulta_Click(null, null);
                 }
                 else
                 {

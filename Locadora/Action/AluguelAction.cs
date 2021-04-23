@@ -64,7 +64,7 @@ namespace Locadora.Action
         public List<Aluguel> Lista(string nome)
         {
             try
-            {
+            {   
                 _con.OpenConnection();
 
                 var listaAluguel= new List<Aluguel>();

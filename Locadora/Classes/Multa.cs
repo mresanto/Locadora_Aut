@@ -8,20 +8,20 @@ namespace Locadora.Classes
 {
     public class Multa
     {
+        public int idMulta { get; set; }
+        public string data_multa { get; set; }
+        public int preco_multa { get; set; }
+        public string info_multa { get; set; }
+        public int id_aluguel { get; set; }
         public Multa()
         {
             idMulta = 0;
-            dataMulta = "";
-            precoMulta = 0;
-            infoMulta = "";
-            idAluguel = 0;
+            data_multa = "0000-00-00";
+            preco_multa = 0;
+            info_multa = null;
+            id_aluguel = 0;
+ 
         }
-
-        public int idMulta { get; set; }
-        public string dataMulta { get; set; }
-        public int precoMulta { get; set; }
-        public string infoMulta { get; set; }
-        public int idAluguel { get; set; }
 
 
 

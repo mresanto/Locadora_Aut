@@ -54,8 +54,6 @@
             this.txtPrecoAluguel = new System.Windows.Forms.TextBox();
             this.btnSalvarAluguel = new System.Windows.Forms.Button();
             this.tabMulta = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbmMulta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtInfoMulta = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -169,7 +167,7 @@
             this.btnAddMulta.TabIndex = 21;
             this.btnAddMulta.Text = "Adicionar Multa";
             this.btnAddMulta.UseVisualStyleBackColor = true;
-            this.btnAddMulta.Click += new System.EventHandler(this.btnSalvarMulta_Click);
+            this.btnAddMulta.Click += new System.EventHandler(this.btnAddMulta_Click);
             // 
             // grdPesquisarMulta
             // 
@@ -178,6 +176,7 @@
             this.grdPesquisarMulta.Name = "grdPesquisarMulta";
             this.grdPesquisarMulta.Size = new System.Drawing.Size(529, 378);
             this.grdPesquisarMulta.TabIndex = 20;
+            this.grdPesquisarMulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPesquisarMulta_CellContentClick);
             // 
             // txtPesquisarIdMulta
             // 
@@ -322,8 +321,6 @@
             // 
             // tabMulta
             // 
-            this.tabMulta.Controls.Add(this.label9);
-            this.tabMulta.Controls.Add(this.cbmMulta);
             this.tabMulta.Controls.Add(this.label6);
             this.tabMulta.Controls.Add(this.txtInfoMulta);
             this.tabMulta.Controls.Add(this.button2);
@@ -339,23 +336,6 @@
             this.tabMulta.TabIndex = 2;
             this.tabMulta.Text = "Multa";
             this.tabMulta.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(191, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Cliente Multa";
-            // 
-            // cbmMulta
-            // 
-            this.cbmMulta.FormattingEnabled = true;
-            this.cbmMulta.Location = new System.Drawing.Point(191, 34);
-            this.cbmMulta.Name = "cbmMulta";
-            this.cbmMulta.Size = new System.Drawing.Size(257, 21);
-            this.cbmMulta.TabIndex = 22;
             // 
             // label6
             // 
@@ -497,7 +477,5 @@
         private System.Windows.Forms.TextBox txtDataMulta;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAddMulta;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbmMulta;
     }
 }
