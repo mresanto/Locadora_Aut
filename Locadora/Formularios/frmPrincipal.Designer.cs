@@ -89,6 +89,7 @@
             this.picGatinho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picGatinho.TabIndex = 1;
             this.picGatinho.TabStop = false;
+            this.picGatinho.Click += new System.EventHandler(this.picGatinho_Click);
             // 
             // frmPrincipal
             // 

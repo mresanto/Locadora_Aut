@@ -42,5 +42,10 @@ namespace Locadora
         {
 
         }
+
+        private void picGatinho_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
